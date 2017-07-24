@@ -38,7 +38,7 @@
  				받는 사람: {{ username }} 상품 :{{ cloth_name }}
  			</div>
  		</div>
- 		<form method="post" action="/sending/{{ username }}?item={{ cloth_name }}">
+ 		<form method="post" action="/sending/{{ username }}/?item={{ cloth_name }}">
  		{% csrf_token %}
  		<div style="margin:10px;">
  		<textarea style="height: 150px; width: 100%; padding: 0; resize: none" name="text"></textarea>

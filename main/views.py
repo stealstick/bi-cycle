@@ -59,6 +59,8 @@ def sending(request, username):
     cloth_name = request.GET['item']
     text = request.POST['text']
     cloth= Cloth.objects.get(cloth_name=cloth_name)
+    print(username)
+    print("*"*100)
     resiver = User.objects.get(username=username)
     date=datetime.datetime.now()
     send = Send(cloth=cloth, resiver=resiver,owner=request.user, text=text, update_date=date)

@@ -49,7 +49,7 @@
 						</div>
 						<div class="row">
 						{% if user.is_authenticated %}
-							<button class="communication" onClick="window.open('/send/{{ cloth.owner.name }}?item={{ cloth.cloth_name }}', '', 'width=400, height=270'); return false;">
+							<button class="communication" onClick="window.open('/send/{{ cloth.owner.username }}?item={{ cloth.cloth_name }}', '', 'width=400, height=270'); return false;">
 								판매자에게 연락하기
 							</button>
 							{% else %}
