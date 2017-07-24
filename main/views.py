@@ -4,6 +4,10 @@ from .models import Cloth
 from mypage.models import Send
 from account.models import User
 import datetime
+
+# User.objects.annotate(count=Sum('owner_clother__count')).order_by('-count')[0:3]
+# 3 순위 까지 구하는것
+
 def index(request):
     try :
         rent = Cloth.objects.filter(lenter = request.user)
@@ -70,6 +74,7 @@ def borrow(request):
     cloth = Cloth.objects.get(cloth_name=cloth, owner=owner)
     lenter = User.objects.get(username=lenter)
     cloth.lenter = lenter
+    cloth.count += 1
     cloth.save()
     send=Send.objects.filter(cloth=cloth, resiver=owner, owner=lenter)
     send.delete()
