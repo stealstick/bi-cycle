@@ -1,0 +1,181 @@
+{% extends "clothupload/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+<form action="/clothupload/upload/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="row clothupload-layout">
+	<div class="col s12 m12">
+		<span class="cut-line">자전거 정보&nbsp;</span>
+		<div class="card">
+			<div class="card-content">
+				<span class="clothupload-infotxt">
+					자전거 사진올리기
+				</span>
+				<div class="row">
+					<div class="col s12 m4">
+						<div class="image-upload valign-wrapper" >
+							<div class=" " style=" position: absolute; left:50%; top:50%; transform: translateX(-50%); margin-top: -60px ;color: white; z-index: 9; cursor: pointer;" onclick="$('#photo').click();" >+</div>
+							<div id="image-upload-img" style="width: 100%; height: 200px; position: absolute;">
+
+							</div>
+
+						</div>
+						<input type="file" name="cloth_img" id="photo" style="display: none;" >
+					</div>
+				<div class="col s12 m8">
+					<div class="row nomargin">
+						<div class="col s12 m3">
+							<span class="product-info">
+								제품이름
+							</span>
+						</div>
+						<div class="col s12 m8">
+							<input type="text" name="cloth_name" id="product-name">
+						</div>
+						<div class="col s12 m1">
+						</div>
+					</div>
+					
+					<div class="row nomargin">
+						<div class="col s12 m3">
+							<span class="product-info">
+								보증금
+							</span>
+						</div>
+						<div class="col s12 m4">
+							<input type="text" name="bo_prize" id="bo_prize">
+						</div>
+						<div class="col s12 m5">
+						</div>
+					</div>
+					<div class="row nomargin">
+						<div class="col s12 m3">
+							<span class="product-info">
+								대여료
+							</span>
+						</div>
+						<div class="col s12 m4">
+							<input type="text" name="lent_prize" id="lent_prize">
+						</div>
+						<div class="col s12 m5">
+						</div>
+					</div>
+					<div class="row nomargin">
+						<div class="col s12 m3">
+							<span class="product-info">
+								자전거 종류
+							</span>
+						</div>
+						<div class="col s12 m4">
+                        <select class="browser-default" name="category" id="category">
+                           <option value="" disabled selected>Category</option>
+                           <option value="산악자전거">산악자전거</option>
+                           <option value="로드바이크">로드바이크</option>
+                           <option value="하이브리드">하이브리드</option>
+                           <option value="접이식">접이식</option>
+                           <option value="BMX">BMX</option>
+                           <option value="픽시">픽시</option>
+                           <option value="리커번트">리커번트</option>
+                        </select>
+                     </div>   
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col s12 m12">
+					<span class="cut-line">자전거 소개&nbsp;</span>
+					<div class="col s12 m12 cloth-Explanation-wrapper">
+						<textarea id="textarea1" class="cloth-intro" name="cloth_intro"></textarea>
+					</div>
+				</div>					
+			</div>
+			<div class="row">
+				<div class="col s12 m12">
+					<span class="cut-line">자전거 상세 설명&nbsp;</span>
+					<div class="col s12 m12 cloth-Explanation-wrapper">
+						<textarea id="textarea2" class="cloth-Explanation" name="cloth_about"></textarea>
+					</div>
+				</div>					
+			</div>
+			<div class="row">
+               <div class="col s12 m12">
+                  <div class="col s12 m12">
+                     <button type = "submit" class="clothupload-confirm-btn" OnClick="
+
+                     	if($('#photo').val()!='')
+                     	{
+
+                     		if($('#product-name').val()!=''){
+
+                     			if($('#size').val()!=''){
+
+                     				if($('#bo_prize').val()!=''){
+
+                     					if($('#lent_prize').val()!=''){
+
+                     						if($('#category').val()!=null)
+                     						{
+                     							if($('#textarea1').val()!='')
+                     							{
+	                     							if($('#textarea2').val()!='')
+	                     							{
+	                     								return true;
+
+	                     							}
+	                     							else{
+
+	                     								$('#textarea2').focus();
+	                     							}
+
+                     							}
+                     							else{
+
+                     								$('#textarea1').focus();
+                     							}
+                     						}
+                     						else{
+
+                     							$('#category').focus();
+                     						}
+                     					}
+                     					else{
+
+                     						$('#lent_prize').focus();
+                     					}
+                     				}
+                     				else{
+
+                     					$('#bo_prize').focus();
+                     				}
+                     			}
+                     			else{
+                     				$('#size').focus();
+
+                     			}
+                     		}
+                     		else{
+
+                     			$('#product-name').focus();
+                     		}
+                     	}
+                     	else{
+
+                     		alert('이미지를 선택해주세요');
+                     	}
+                     	return false;
+                     ">
+                        Upload
+                     </button>
+                  </div>
+               </div>
+            </div>
+
+		</div>
+	</div>
+</div>
+</div>
+</form>
+{% endblock %}
+

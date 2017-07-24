@@ -1,0 +1,61 @@
+
+
+{% extends "main/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<div class="card">
+    
+    <div class="row">
+        <div class="col s12 l12">
+            <div class="col s12 l12">
+                <h5>신규 등록 자전거</h5>
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 l12">
+            <div class="col s12 l12">
+                {% for cloth in clothes %}
+                <div class="col s12 l4">
+                <div class="card" onclick="location.href='/clothdetail/{{ cloth.cloth_name }}'">
+                        <div class="card-image">
+                            <img src="/media/{{ cloth.cloth_img }}">
+                        </div>
+                        <div class="card-content">
+                            <p>{{ cloth.cloth_name }}</p>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="{% static 'main/img/intro.png' %}"> <!-- random image -->
+      </li>
+      <li>
+        <img src="{% static 'main/img/card1.png' %}"> <!-- random image -->
+      </li>
+      <li>
+        <img src="{% static 'main/img/card2.png' %}"> <!-- random image -->
+      </li>
+      <li>
+        <img src="{% static 'main/img/card3.png' %}"> <!-- random image -->
+      </li>
+    </ul>
+  </div>
+     </div>
+  </div>
+
+{% endblock %}

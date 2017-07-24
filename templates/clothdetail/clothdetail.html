@@ -1,0 +1,85 @@
+{% extends "clothdetail/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="row clothdetail-layout">
+	<div class="col s12 m12">
+		<div class="card">
+			<div class="card-content">
+				<div class="row">
+					<div class="col s12 m5">
+						<div >
+							<img src="/media/{{ cloth.cloth_img }}" class="cloth-image-box">
+						</div>
+					</div>
+					<div class="col s12 m1">
+					</div>
+					<div class="col s12 m5">
+						<div class="row">
+							<span class="cloth-title">
+								{{ cloth.cloth_name }}
+							</span>
+						</div>
+						<span class="detail-clothinfo">
+							<div class="row detail-clothexplanation">
+								{{ cloth.cloth_intro }}
+							</div>
+						</span>
+						<span class="detail-costtxt">
+							<div class="row nomargin detail-rentcost">
+								대여료 : <span class="cost">{{ cloth.bo_prize }}원</span>
+							</div>
+							<div class="row nomargin detail-guaranteecost">
+								보증금 : <span class="cost">{{ cloth.lent_prize }}원</span>
+							</div>
+						</span>
+						<div class="row">
+							<div class="col s12 m4 nopadding seller-info">
+								<span class="seller-infotxt">
+									판매자 정보<br>
+									
+								</span>
+							</div>
+							<div class="col s12 m1 nopadding">
+							</div>
+							<div class="col s12 m3 nopadding average-grade">
+								<span class="cost">{{ cloth.owner.name }}</span>
+								
+							</div>
+						</div>
+						<div class="row">
+						{% if user.is_authenticated %}
+							<button class="communication" onClick="window.open('/send/{{ cloth.owner.name }}?item={{ cloth.cloth_name }}', '', 'width=400, height=270'); return false;">
+								판매자에게 연락하기
+							</button>
+							{% else %}
+							<button class="communication" onClick="alert('로그인이 필요합니다.')">
+								판매자에게 연락하기
+							</button>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m12">
+						<h5>상세 설명</h5>
+						<div class="divider"></div>
+					</div>
+
+					<div class="row">
+						<div class="col s12 m12">
+							<p class="clothdetail-Explanation">
+								{{ cloth.cloth_about }}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
+
+
+

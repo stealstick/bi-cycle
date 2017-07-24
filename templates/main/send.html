@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ 	<style>
+ 	.btn{
+
+ 		padding-top: 0px;
+ 		padding-bottom: 0px;
+ 		padding-right: 4px;
+ 		padding-left: 4px;
+ 		font-size: 12px;
+ 		background-color: white;
+ 		border-radius: 10px;
+ 	}
+ 	.sendmessage{
+
+ 		border: 3px solid #e93b11;
+ 		background-color: #e93b11;
+ 		color: white;
+ 	}
+ 	.closebtn{
+
+ 		border: 3px solid gray;
+ 		background-color: gray;
+ 		color: white;
+ 	}
+ 	</style>
+ </head>
+ <body style="margin: 0; padding: 0; ">
+
+ 	<div style="width:100%; background-color:#e83b11; margin: 0; color: white;">
+
+ 		<div style=" padding: 5px; font-size: 15px;">쪽지 보내기 </div>
+ 	</div>
+ 	<div style="width: 100%;  text-align: center;  display: inline-block;">
+ 		<div style="margin: 10px; background-color:#ece8e8;">
+ 			<div style="padding: 5px; font-size: 13px; ">	
+ 				받는 사람: {{ username }} 상품 :{{ cloth_name }}
+ 			</div>
+ 		</div>
+ 		<form method="post" action="/sending/{{ username }}?item={{ cloth_name }}">
+ 		{% csrf_token %}
+ 		<div style="margin:10px;">
+ 		<textarea style="height: 150px; width: 100%; padding: 0; resize: none" name="text"></textarea>
+ 		</div>
+ 	</div>
+ 	<div style="text-align: center; margin-top: 5px;">
+ 		<button class="btn sendmessage">보내기</button>
+ 		<button onclick="window.close();" class="btn closebtn">닫기</button>
+
+ 	</div>
+ 	</form>
+ </body>
+ </html>

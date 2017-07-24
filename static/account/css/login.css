@@ -1,0 +1,41 @@
+html{
+	color: #C96DD8;
+}
+.login-box{
+	border-style: solid;
+	border-color : #7C48C3;
+}
+.cut-line{
+	color:#7C48C3;
+	font-size: 34px;
+	border-right-style: solid;
+	border-right-color: #c2c2c2; 
+}
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #7C48C3;
+    box-shadow: 0 1px 0 0 #7C48C3;
+}
+
+
+.input-field .prefix.active{
+	color: #7C48C3;
+}
+
+input[type=text]:focus:not([readonly])+label{
+	color : #7C48C3;
+}
+input[type=tel]:focus:not([readonly])+label{
+	color: #7C48C3;
+}
+.login-button{
+	background-color: #7C48C3;
+}
+.login-button:hover{
+	background-color: #C96DD8;
+}
+.login-layout{
+	margin-top: 10%;
+}
+.join-layout{
+	margin-top: 5%;
+}

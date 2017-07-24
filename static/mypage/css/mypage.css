@@ -1,0 +1,121 @@
+
+.item-size{
+	padding: 2px !important;
+	height: 150px;
+}
+.tab-custom{
+	background-color: #263238;
+	height: 40px;
+}
+.tab-font{
+	color: #fff !important;
+}
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #eeff41;
+    will-change: left, right;
+}
+.lend-user{
+	color: rgb(250,0,0);
+}
+.user-icon-box{
+
+	margin-bottom: 0px;
+}
+.user-icon{
+
+	font-size: 150px !important;
+}
+.user-imfo{
+
+	border-right-color: #C96DD8;
+	border-right-style: solid;
+	border-right-width: 1px;
+	width:50px;
+	font-size: 18px;
+	padding-right: 30px;
+	color: #C96DD8;
+}
+.user-imfo-text{
+	margin-left:5%;
+	font-size: 18px;
+}
+
+
+.card-image-img{
+
+	width: 100%;
+	height: 130px;
+}
+.card-image-x{
+
+	position: absolute;
+	right:0px;
+	top:0px;
+	font-size: 20px;
+	color: white;
+}
+.card-content-myclothup{
+
+	font-size: 12px;
+	height: 80px;
+}
+
+.card-content-title{
+
+	font-size: 14px;
+}
+.card-content-money{
+
+	font-size: 12px;
+	font-weight: bold;
+
+}
+.card-plus{
+
+	background-color: gray;
+	height: 210px;
+}
+.card-plus-plusbtn{
+
+	color: white;
+	font-size: 80px;
+	margin: 0 auto;
+
+
+}
+.mycloth-text{
+	border-right-style: solid;
+	border-right-color: #c2c2c2;
+	font-size: 30px;
+	color: #C96DD8;
+
+}
+.horizontalcard-image{
+
+	height: 120px;
+}
+.horizontalcard-box{
+
+	height: 120px;
+}
+.horizontalcard-text{
+
+	line-height: 1.5em;
+
+}
+.card-content-rentalperiod{
+
+	color: #C96DD8 !important;
+	font-weight: bold;
+}
+.lent-button{
+	width: 100%;
+	height:100%;
+	background-color: rgb(252,0,62);
+}
+.lent-button:hover{
+	background-color: rgb(252,180,202);
+}

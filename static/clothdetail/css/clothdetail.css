@@ -1,0 +1,84 @@
+.nomargin{
+	margin: 0;
+}
+
+.nopadding{
+	padding: 0 !important;
+}
+
+.cut-line{
+	color:#C96DD8;
+	font-size: 22px;
+	border-right-style: solid;
+	border-right-color: #c2c2c2; 
+}
+
+.cloth-image-box{
+	width: 100%;
+	height: 300px;
+	background-color: #000;
+}
+
+.cloth-title{
+	font-size: 24px; 
+}
+
+.detail-clothinfo{
+	font-size: 16px;
+}
+
+.detail-costtxt{
+	font-size: 18px;
+
+}
+
+.detail-rentcost,.detail-guaranteecost{
+	margin-bottom: 1%;
+}
+
+.cost{
+	color: #C96DD8;
+}
+
+.seller-infotxt{
+	font-size: 17.5px;
+	padding-right: 11%;
+	border-right-style: solid;
+	border-right-color: #535353; 
+}
+
+.average-title-gradetxt{
+	font-size: 12px;
+}
+
+.average-gradetxt{
+	margin-top: 0;
+	display: block;
+	color: #C96DD8;
+	font-size: 40px;
+	line-height: 30px;
+}
+
+.communication{
+	width: 100%;
+	height: 40px;
+	font-size: 21px;
+	border:none;
+	background-color: #7645C1;
+	color: #fff;
+}
+
+button:focus {
+    outline: none;
+    background-color: #3023AE;
+}
+
+.communication:hover{
+	background-color: #C96DD8;
+}
+
+.clothdetail-Explanation{
+	padding: 3%;
+	text-align: center;
+	font-size: 20px;
+}
