@@ -33,7 +33,7 @@ def useradd(request):
     name = request.POST['name']
     email = request.POST['email']
     phone_number = request.POST['phone_number']
-    area = request.POST['email']
+    area = request.POST['area']
     useradd = User(username=username, password=password,name=name, email=email, phone_number=phone_number)
     useradd.set_password(password)
     useradd.save()
