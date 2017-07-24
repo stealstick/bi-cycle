@@ -4,10 +4,9 @@ from .models import Cloth
 from mypage.models import Send
 from account.models import User
 import datetime
+from django.db.models import Sum
 
-# User.objects.annotate(count=Sum('owner_clother__count')).order_by('-count')[0:3]
-# 3 순위 까지 구하는것
-
+ 
 def index(request):
     try :
         rent = Cloth.objects.filter(lenter = request.user)
@@ -20,10 +19,11 @@ def index(request):
     except:
         send =None;
     clothes = Cloth.objects.all()
-
+    ranking=User.objects.annotate(count=Sum('owner_clother__count')).order_by('-count')[0:3]
     context = {'clothes': clothes,
     'rent' : rent,
     'my_send' : send,
+    'ranking':ranking,
     }
     return render(request, 'main/main.html', context)
 

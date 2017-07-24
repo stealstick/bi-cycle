@@ -3,6 +3,7 @@ from .models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as _login, logout as _logout
 from django.contrib import messages
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 def login(request):
@@ -36,6 +37,6 @@ def useradd(request):
     useradd = User(username=username, password=password,name=name, email=email, phone_number=phone_number)
     useradd.set_password(password)
     useradd.save()
-    return render(request, 'account/login.html')
+    return HttpResponseRedirect("/account/login/")
 
 
